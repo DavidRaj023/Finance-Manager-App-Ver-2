@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/b361f072-0ae6-4675-bdcf-c349608da44d/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/finance-manager-david",
+    "appService.deploySubpath": "."
+}
