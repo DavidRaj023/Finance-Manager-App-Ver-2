@@ -94,14 +94,14 @@ userSchema.pre('save', async function (next) {
     }
 
     next();
-})
+});
 
 // Delete user transactions when user is removed
 userSchema.pre('remove', async function (next) {
     const user = this;
     await Transaction.deleteMany({ owner: user._id });
     next();
-})
+});
 
 const User = mongoose.model('User', userSchema);
 

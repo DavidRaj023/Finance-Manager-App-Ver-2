@@ -132,11 +132,11 @@ router.get('/balance', auth, async (req, res) => {
         const moneyIn = await Transaction.aggregate([
             { $match: { owner: req.user._id, flow: 'Money In' } },
             { $group: { _id: req.user._id, moneyIn: { $sum: "$amount" } } }
-        ])
+        ]);
         const moneyOut = await Transaction.aggregate([
             { $match: { owner: req.user._id, flow: 'Money Out' } },
             { $group: { _id: req.user._id, moneyOut: { $sum: "$amount" } } }
-        ])
+        ]);
         const balance = {
             income: moneyIn[0].moneyIn,
             expenditure: moneyOut[0].moneyOut,
@@ -146,7 +146,8 @@ router.get('/balance', auth, async (req, res) => {
     } catch (error) {
         console.log(error);
         res.status(500).send({
-            error: error.message
+            message: error.message,
+            error: error
         })
     }
 })
