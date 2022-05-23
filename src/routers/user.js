@@ -3,6 +3,15 @@ const User = require('../models/user');
 const auth = require('../middleware/auth');
 const router = new express.Router();
 
+router.post('/test', async (req, res) => {
+    try {
+        const user = new User(req.body);
+        return res.status(201).send(user);
+    } catch (e) {
+        res.status(400).send(e);
+    }
+})
+
 router.post('/user', async (req, res) => {
     try {
         const user = new User(req.body);

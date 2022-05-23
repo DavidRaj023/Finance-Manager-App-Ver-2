@@ -6,6 +6,7 @@ const transactionRouter = require('./routers/transaction');
 
 const app = express();
 const port = process.env.PORT || 3000;
+console.log(process.env.PORT)
 
 app.use(cors());
 app.use(express.json());
