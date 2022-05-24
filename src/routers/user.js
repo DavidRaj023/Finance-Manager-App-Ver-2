@@ -6,7 +6,7 @@ const router = new express.Router();
 router.post('/test', async (req, res) => {
     try {
         const user = new User(req.body);
-        return res.status(201).send(user);
+        return res.status(201).send(user.name);
     } catch (error) {
         res.status(400).send(error);
     }
