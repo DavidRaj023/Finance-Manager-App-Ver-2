@@ -7,8 +7,8 @@ router.post('/test', async (req, res) => {
     try {
         const user = new User(req.body);
         return res.status(201).send(user);
-    } catch (e) {
-        res.status(400).send(e);
+    } catch (error) {
+        res.status(400).send(error);
     }
 })
 
