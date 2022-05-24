@@ -12,6 +12,7 @@ router.post('/test', async (req, res) => {
     }
 })
 
+
 router.post('/user', async (req, res) => {
     try {
         const user = new User(req.body);
