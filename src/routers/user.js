@@ -11,7 +11,8 @@ router.post('/test', async (req, res) => {
     } catch (error) {
         res.status(400).send(error);
     }
-})
+});
+
 
 router.post('/user', async (req, res) => {
     try {
