@@ -1,0 +1,10 @@
+version: '3'
+services:
+  finance-manager:
+    image: davidraj023/finance-manager-dev
+    ports:
+      - 3002:3000
+  finance-manager2:
+    image: davidraj023/finance-manager-dev:001
+    ports:
+      - 3003:3000
